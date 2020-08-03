@@ -51,7 +51,7 @@ const ButtonPanel = () => {
           <Button
             key={name}
             color={i === group1.length - 1 ? 'orange' : '#E0E0E0'}
-            wide={name === '0' ? true : false}
+            wide={name === '0'}
             name={name}
           />
         ))}

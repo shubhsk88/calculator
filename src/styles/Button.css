@@ -1,9 +1,10 @@
 .button {
   border: none;
   outline: none;
-  background: #e0e0e0;
+
   height: 100%;
-  margin: 20px 0;
+  font-size: 30px;
   width: 25%;
-  padding: 20px;
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.4);
 }

@@ -11,28 +11,49 @@ const ButtonPanel = () => {
   return (
     <div className="button-panel">
       <div className="group">
-        {group1.map((name) => (
-          <Button key={name} name={name} />
+        {group1.map((name, i) => (
+          <Button
+            key={name}
+            color={i === group1.length - 1 ? 'orange' : '#E0E0E0'}
+            name={name}
+          />
         ))}
       </div>
       <div className="group">
-        {group2.map((name) => (
-          <Button key={name} name={name} />
+        {group2.map((name, i) => (
+          <Button
+            key={name}
+            color={i === group1.length - 1 ? 'orange' : '#E0E0E0'}
+            name={name}
+          />
         ))}
       </div>
       <div className="group">
-        {group3.map((name) => (
-          <Button key={name} name={name} />
+        {group3.map((name, i) => (
+          <Button
+            key={name}
+            color={i === group1.length - 1 ? 'orange' : '#E0E0E0'}
+            name={name}
+          />
         ))}
       </div>
       <div className="group">
-        {group4.map((name) => (
-          <Button key={name} name={name} />
+        {group4.map((name, i) => (
+          <Button
+            key={name}
+            color={i === group1.length - 1 ? 'orange' : '#E0E0E0'}
+            name={name}
+          />
         ))}
       </div>
       <div className="group">
-        {group5.map((name) => (
-          <Button key={name} name={name} />
+        {group5.map((name, i) => (
+          <Button
+            key={name}
+            color={i === group1.length - 1 ? 'orange' : '#E0E0E0'}
+            wide={name === '0' ? true : false}
+            name={name}
+          />
         ))}
       </div>
     </div>

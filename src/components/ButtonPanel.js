@@ -1,38 +1,42 @@
 import React from 'react';
 import Button from './Button';
+import '../styles/ButtonPanel.css';
 
-const ButtonPanel = () => (
-  <div>
-    <div className="group-1">
-      <Button name="AC" />
-      <Button name="+/-" />
-      <Button name="%" />
-      <Button name="/" />
+const ButtonPanel = () => {
+  const group1 = ['AC', '+/-', '%', '/'];
+  const group2 = ['7', '8', '9', 'X'];
+  const group3 = ['4', '5', '6', '-'];
+  const group4 = ['1', '2', '3', '+'];
+  const group5 = ['0', '.', '='];
+  return (
+    <div className="button-panel">
+      <div className="group">
+        {group1.map((name) => (
+          <Button key={name} name={name} />
+        ))}
+      </div>
+      <div className="group">
+        {group2.map((name) => (
+          <Button key={name} name={name} />
+        ))}
+      </div>
+      <div className="group">
+        {group3.map((name) => (
+          <Button key={name} name={name} />
+        ))}
+      </div>
+      <div className="group">
+        {group4.map((name) => (
+          <Button key={name} name={name} />
+        ))}
+      </div>
+      <div className="group">
+        {group5.map((name) => (
+          <Button key={name} name={name} />
+        ))}
+      </div>
     </div>
-    <div className="group-2">
-      <Button name="7" />
-      <Button name="8" />
-      <Button name="9" />
-      <Button name="X" />
-    </div>
-    <div className="group-3">
-      <Button name="4" />
-      <Button name="5" />
-      <Button name="6" />
-      <Button name="-" />
-    </div>
-    <div className="group-4">
-      <Button name="1" />
-      <Button name="2" />
-      <Button name="3" />
-      <Button name="+" />
-    </div>
-    <div className="group-5">
-      <Button name="0" />
-      <Button name="." />
-      <Button name="=" />
-    </div>
-  </div>
-);
+  );
+};
 
 export default ButtonPanel;

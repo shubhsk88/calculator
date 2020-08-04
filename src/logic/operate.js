@@ -20,7 +20,7 @@ const operate = (numberOne, numberTwo, operation) => {
       else result = first / second;
       break;
     case '%':
-      result = (first / second) * 100;
+      result = first / 100;
       break;
     default:
       result = 0;

@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from './Button';
+import '../styles/ButtonPanel.css';
 
 const ButtonPanel = () => {
   const group1 = ['AC', '+/-', '%', '/'];

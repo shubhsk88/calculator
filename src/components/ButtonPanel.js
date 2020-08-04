@@ -2,7 +2,10 @@ import React from 'react';
 import Button from './Button';
 import '../styles/ButtonPanel.css';
 
-const ButtonPanel = () => {
+const ButtonPanel = ({ clickHandler }) => {
+  const handleClick = (buttonName) => {
+    return clickHandler(buttonName);
+  };
   const group1 = ['AC', '+/-', '%', '/'];
   const group2 = ['7', '8', '9', 'X'];
   const group3 = ['4', '5', '6', '-'];
@@ -16,6 +19,7 @@ const ButtonPanel = () => {
             key={name}
             color={i === group1.length - 1 ? 'orange' : '#E0E0E0'}
             name={name}
+            clickHandler={handleClick}
           />
         ))}
       </div>
@@ -25,6 +29,7 @@ const ButtonPanel = () => {
             key={name}
             color={i === group1.length - 1 ? 'orange' : '#E0E0E0'}
             name={name}
+            clickHandler={handleClick}
           />
         ))}
       </div>
@@ -34,6 +39,7 @@ const ButtonPanel = () => {
             key={name}
             color={i === group1.length - 1 ? 'orange' : '#E0E0E0'}
             name={name}
+            clickHandler={handleClick}
           />
         ))}
       </div>
@@ -43,6 +49,7 @@ const ButtonPanel = () => {
             key={name}
             color={i === group1.length - 1 ? 'orange' : '#E0E0E0'}
             name={name}
+            clickHandler={handleClick}
           />
         ))}
       </div>
@@ -53,6 +60,7 @@ const ButtonPanel = () => {
             color={i === group1.length - 1 ? 'orange' : '#E0E0E0'}
             wide={name === '0'}
             name={name}
+            clickHandler={handleClick}
           />
         ))}
       </div>

@@ -2,26 +2,24 @@ import Big from 'big.js';
 
 const operate = (numberOne, numberTwo, operation) => {
   let result;
-  const first = Big(numberOne);
-  const second = Big(numberTwo);
+  const first = Big(Number(numberOne));
+  const second = Big(Number(numberTwo));
   switch (operation) {
     case '-':
-      result = first - second;
+      result = first.minus(second);
       break;
     case '+':
-      result = first + second;
+      result = first.add(second);
       break;
 
     case '*':
-      result = first * second;
+      result = first.mul(second);
       break;
     case '/':
-      if (second === 0) result = undefined;
-      else result = first / second;
+      if (numberTwo === '0') return 'undefined';
+      else result = first.div(second);
       break;
-    case '%':
-      result = first / 100;
-      break;
+
     default:
       result = 0;
       break;

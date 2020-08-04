@@ -2,11 +2,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import '../styles/Button.css';
 
-const Button = ({ name, color, wide }) => {
+const Button = ({ name, color, wide, clickHandler }) => {
   const backgroundColor = color;
+  const handleClick = (buttonName) => {
+    clickHandler(buttonName.target.innerText);
+  };
   const width = wide ? '50%' : '25%';
+
   return (
-    <button type="button" style={{ backgroundColor, width }} className="button">
+    <button
+      onClick={handleClick}
+      type="button"
+      style={{ backgroundColor, width }}
+      className="button"
+    >
       {name}
     </button>
   );

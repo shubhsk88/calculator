@@ -10,14 +10,22 @@ class App extends Component {
     this.state = { total: null, next: null, operation: null };
   }
   handleClick = (buttonName) => {
-    this.setState(calculate(this.state, buttonName));
+    const { total, next, operation } = this.state;
+    this.setState(calculate({ total, next, operation }, buttonName));
   };
 
   render() {
     const { total, next, operation } = this.state;
+    let result = total || next;
+    if (total && next && operation) {
+      result = `${total} ${operation.toLowerCase()} ${next}`;
+    } else if (total && operation) {
+      result = `${total} ${operation.toLowerCase()}`;
+    }
+
     return (
       <div className="App">
-        <Display total={total} />
+        <Display result={result || undefined} />
         <ButtonPanel clickHandler={this.handleClick} />
       </div>
     );

@@ -10,27 +10,27 @@ const ButtonPanel = () => {
   return (
     <div className="button-panel">
       <div className="group">
-        {group1.map((name) => (
+        {group1.map(name => (
           <Button key={name} name={name} />
         ))}
       </div>
       <div className="group">
-        {group2.map((name) => (
+        {group2.map(name => (
           <Button key={name} name={name} />
         ))}
       </div>
       <div className="group">
-        {group3.map((name) => (
+        {group3.map(name => (
           <Button key={name} name={name} />
         ))}
       </div>
       <div className="group">
-        {group4.map((name) => (
+        {group4.map(name => (
           <Button key={name} name={name} />
         ))}
       </div>
       <div className="group">
-        {group5.map((name) => (
+        {group5.map(name => (
           <Button key={name} name={name} />
         ))}
       </div>

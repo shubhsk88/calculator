@@ -1,0 +1,11 @@
+.result {
+  display: flex;
+  background: gray;
+  height: 100px;
+  padding: 5px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  align-items: center;
+  justify-content: flex-end;
+}

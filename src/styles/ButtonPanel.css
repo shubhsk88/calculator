@@ -1,5 +1,8 @@
-.App {
+.button-panel {
   display: flex;
   flex-direction: column;
-  width: 700px;
+}
+
+.group {
+  height: 100px;
 }

@@ -8,11 +8,13 @@ class App extends Component {
   constructor() {
     super();
     this.state = { total: null, next: null, operation: null };
+    this.handleClick = this.handleClick.bind(this);
   }
-  handleClick = (buttonName) => {
+
+  handleClick(buttonName) {
     const { total, next, operation } = this.state;
     this.setState(calculate({ total, next, operation }, buttonName));
-  };
+  }
 
   render() {
     const { total, next, operation } = this.state;

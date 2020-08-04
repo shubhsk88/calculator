@@ -1,20 +1,19 @@
 import operate from './operate';
 
 const calculate = (data, buttonName) => {
-  let { total, next } = data;
-  let { operation } = data;
+  const { total, next } = data;
+  const { operation } = data;
   const sign = ['+', '-', 'X', '/'];
   if (buttonName === '+/-' && next) {
     return { ...data, next: (parseFloat(next) * -1).toString() };
   }
-  if (buttonName === '+/-' && !next && total)
-    return { ...data, total: (parseFloat(total) * -1).toString() };
+  if (buttonName === '+/-' && !next && total) return { ...data, total: (parseFloat(total) * -1).toString() };
 
-  if (sign.includes(buttonName) && !total && next)
+  if (sign.includes(buttonName) && !total && next) {
     return { total: next, next: null, operation: buttonName };
+  }
 
-  if (sign.includes(buttonName) && !next && total)
-    return { ...data, operation: buttonName };
+  if (sign.includes(buttonName) && !next && total) return { ...data, operation: buttonName };
 
   if (buttonName === 'AC') return { total: null, next: null, operation: null };
 
@@ -32,15 +31,11 @@ const calculate = (data, buttonName) => {
       operation: buttonName,
     };
   }
-  if (buttonName === '.' && !total && next && !next.includes('.'))
-    return { ...data, next: `${next}.` };
-  if (buttonName === '.' && total && next && !next.includes('.'))
-    return { ...data, next: `${next}.` };
-  if (buttonName.match(/[0-9]/))
-    return { ...data, next: next ? `${next}${buttonName}` : `${buttonName}` };
+  if (buttonName === '.' && !total && next && !next.includes('.')) return { ...data, next: `${next}.` };
+  if (buttonName === '.' && total && next && !next.includes('.')) return { ...data, next: `${next}.` };
+  if (buttonName.match(/[0-9]/)) return { ...data, next: next ? `${next}${buttonName}` : `${buttonName}` };
 
   if (buttonName === '%' && total && next) {
-    console.log(next);
     return { ...data, next: operate(next, '100', '/').toString() };
   }
 

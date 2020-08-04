@@ -17,7 +17,7 @@ const operate = (numberOne, numberTwo, operation) => {
       break;
     case '/':
       if (numberTwo === '0') return 'undefined';
-      else result = first.div(second);
+      result = first.div(second);
       break;
 
     default:

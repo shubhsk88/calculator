@@ -18,6 +18,7 @@ class App extends Component {
 
   render() {
     const { total, next, operation } = this.state;
+
     let result = total || next;
     if (total && next && operation) {
       result = `${total} ${operation.toLowerCase()} ${next}`;
@@ -33,13 +34,5 @@ class App extends Component {
     );
   }
 }
-// function App() {
-//   return (
-//     <div className="App">
-//       <Display />
-//       <ButtonPanel />
-//     </div>
-//   );
-// }
 
 export default App;

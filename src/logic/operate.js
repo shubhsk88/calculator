@@ -12,8 +12,8 @@ const operate = (numberOne, numberTwo, operation) => {
       result = first.add(second);
       break;
 
-    case '*':
-      result = first.mul(second);
+    case 'X':
+      result = first.times(second);
       break;
     case '/':
       if (numberTwo === '0') return 'undefined';

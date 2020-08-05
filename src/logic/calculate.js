@@ -7,13 +7,13 @@ const calculate = (data, buttonName) => {
   if (buttonName === '+/-' && next) {
     return { ...data, next: (parseFloat(next) * -1).toString() };
   }
-  if (buttonName === '+/-' && !next && total) return { ...data, total: (parseFloat(total) * -1).toString() };
+  if (buttonName === '+/-' && !next && total) { return { ...data, total: (parseFloat(total) * -1).toString() }; }
 
   if (sign.includes(buttonName) && !total && next) {
     return { total: next, next: null, operation: buttonName };
   }
 
-  if (sign.includes(buttonName) && !next && total) return { ...data, operation: buttonName };
+  if (sign.includes(buttonName) && !next && total) { return { ...data, operation: buttonName }; }
 
   if (buttonName === 'AC') return { total: null, next: null, operation: null };
 
@@ -31,17 +31,24 @@ const calculate = (data, buttonName) => {
       operation: buttonName,
     };
   }
-  if (buttonName === '.' && !total && next && !next.includes('.')) return { ...data, next: `${next}.` };
-  if (buttonName === '.' && total && next && !next.includes('.')) return { ...data, next: `${next}.` };
-  if (buttonName.match(/[0-9]/)) return { ...data, next: next ? `${next}${buttonName}` : `${buttonName}` };
+  if (buttonName === '.' && !total && next && !next.includes('.')) { return { ...data, next: `${next}.` }; }
+  if (buttonName === '.' && total && next && !next.includes('.')) { return { ...data, next: `${next}.` }; }
+  if (buttonName.match(/[0-9]/)) { return { ...data, next: next ? `${next}${buttonName}` : `${buttonName}` }; }
 
   if (buttonName === '%' && total && next) {
     return { ...data, next: operate(next, '100', '/').toString() };
   }
 
-  if (buttonName === '%' && !total && next) {
+  if (buttonName === '%' && next && !total) {
     return {
       total: operate(next, '100', '/').toString(),
+      next: null,
+      operation: null,
+    };
+  }
+  if (buttonName === '%' && total && !next) {
+    return {
+      total: operate(total, '100', '/').toString(),
       next: null,
       operation: null,
     };
